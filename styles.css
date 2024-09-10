@@ -1,0 +1,113 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a8d5ba; /* Calm green background */
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure the entire container is centered */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+}
+
+/* Increase text size and adjust opacity */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease;
+}
+
+/* Style for the square icon with rounded borders */
+.icon {
+    width: 350px; /* Increased size */
+    height: 350px;
+    background-image: url('icon.jpg'); /* Add your image URL here */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px; /* Rounded corners */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease 0.5s, transform 0.3s ease; /* Added transform transition */
+}
+
+/* Hover effect on icon */
+.icon:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Hidden content - Initially invisible */
+.hidden-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease; /* Smooth fade-in transition */
+    margin-top: 20px;
+}
+
+.message {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Grid layout for images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease, opacity 1s ease; /* Added opacity transition */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Ensure images fade in smoothly */
+.image-grid img.visible {
+    opacity: 1;
+}
+
+/* Hover effect on images */
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Little text under the grid */
+.extra-text {
+    grid-column: span 2; /* Makes sure the text spans the whole row */
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 600px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
