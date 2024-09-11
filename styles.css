@@ -66,9 +66,9 @@ h1 {
 /* Grid layout for images */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Ensure 2x2 grid */
     grid-gap: 20px;
-    max-width: 600px;
+    max-width: 400px; /* Control the max width to keep the grid centered */
     margin: 0 auto;
 }
 
@@ -77,7 +77,7 @@ h1 {
     height: auto;
     border-radius: 15px;
     transition: transform 0.3s ease, opacity 1s ease;
-    cursor: pointer; /* Add pointer cursor for interactivity */
+    cursor: pointer;
     opacity: 0;
 }
 
@@ -92,7 +92,7 @@ h1 {
 
 /* Extra text under the grid */
 .extra-text {
-    grid-column: span 2;
+    grid-column: span 2; /* Make sure this spans both columns */
     font-size: 1em;
     color: #333;
     text-align: center;
@@ -101,7 +101,7 @@ h1 {
 
 /* Overlay for the text box that appears when an image is clicked */
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
