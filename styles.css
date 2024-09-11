@@ -95,7 +95,9 @@ h1 {
     font-size: 1.5em; /* Increased font size for better readability */
     color: #333;
     text-align: center;
-    margin-top: 100px; /* Added margin to give more space */
+    margin-top: 50px; /* Reduced margin to bring text closer */
+    margin-bottom: 20px; /* Add space below text */
+    padding: 10px; /* Add padding if needed for better spacing */
 }
 
 /* Overlay for the text box that appears when an image is clicked */
