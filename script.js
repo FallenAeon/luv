@@ -29,4 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Handle click on images to show overlay with text
-    images.for
+    images.forEach(img => {
+        img.addEventListener("click", (event) => {
+            overlayText.textContent = event.target.alt; // Show the alt text of the clicked image
+            overlay.style.display = "block";
+            setTimeout(() => {
+                overlay.style.opacity = 1;
+            }, 10); // Small delay to ensure display block takes effect
+        });
+    });
+
+    // Close the overlay when clicking the close button
+    closeBtn.addEventListener("click", () => {
+        overlay.style.opacity = 0;
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 500); // Match this with the CSS transition duration
+    });
+
+    // Hide the overlay when clicking outside of the overlay
+    window.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+            overlay.style.opacity = 0;
+            setTimeout(() => {
+                overlay.style.display = "none";
+            }, 500); // Match this with the CSS transition duration
+        }
+    });
+});
