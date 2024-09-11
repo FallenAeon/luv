@@ -1,56 +1,49 @@
-// Get references to the elements
-const icon = document.getElementById('icon');
-const clickText = document.getElementById('click-text');
-const hiddenContent = document.getElementById('hidden-content');
-const images = document.querySelectorAll('.image-grid img');
-const overlay = document.getElementById('overlay');
-const overlayContent = document.getElementById('overlay-content');
-const closeButton = document.getElementById('close-btn');
+document.addEventListener("DOMContentLoaded", () => {
+    const icon = document.getElementById("icon");
+    const clickText = document.getElementById("click-text");
+    const hiddenContent = document.getElementById("hidden-content");
+    const images = document.querySelectorAll(".image-grid img");
+    const overlay = document.getElementById("overlay");
+    const overlayText = document.getElementById("overlay-text");
+    const closeBtn = document.getElementById("close-btn");
 
-// Fade in the text and icon on page load
-window.addEventListener('load', () => {
-    clickText.style.opacity = '1';
-    icon.style.opacity = '1';
-});
-
-// Add click event listener to the icon
-icon.addEventListener('click', () => {
-    // Fade out the icon and the "Click on me!" text
-    icon.style.opacity = '0';
-    clickText.style.opacity = '0';
-
-    // After fading out, display the hidden content
+    // Show the icon and click text with fade-in
     setTimeout(() => {
-        icon.style.display = 'none';
-        clickText.style.display = 'none';
-        hiddenContent.style.display = 'block';
-        hiddenContent.style.opacity = '1';
+        icon.style.opacity = 1;
+        clickText.style.opacity = 1;
+    }, 500);
 
-        // Add the 'visible' class to each image for the smooth fade-in effect
-        images.forEach((img, index) => {
-            setTimeout(() => {
-                img.classList.add('visible');
-            }, (index + 1) * 200); // Add a 0.2s delay for the first image as well
-        });
-    }, 500); // Matches the CSS transition time (0.5s)
-});
-
-// Function to show overlay with text
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        const text = img.getAttribute('data-text'); // Get the text for the clicked image
-        overlayContent.innerText = text; // Set the text in the overlay
-        overlay.style.display = 'flex'; // Show the overlay
+    // Icon click handler
+    icon.addEventListener("click", () => {
+        clickText.style.display = "none";
+        icon.style.opacity = 0;
         setTimeout(() => {
-            overlay.style.opacity = '1'; // Fade-in effect
-        }, 10);
+            icon.style.display = "none";
+            hiddenContent.style.display = "block";
+            setTimeout(() => {
+                hiddenContent.style.opacity = 1;
+                images.forEach(img => img.classList.add("visible"));
+            }, 100);
+        }, 500);
     });
-});
 
-// Function to close the overlay
-closeButton.addEventListener('click', () => {
-    overlay.style.opacity = '0'; // Fade-out effect
-    setTimeout(() => {
-        overlay.style.display = 'none'; // Hide the overlay after fade-out
-    }, 500); // Matches the fade-out duration
+    // Handle click on images to show overlay with text
+    images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            let texts = ["Texto para la imagen 1", "Texto para la imagen 2", "Texto para la imagen 3", "Texto para la imagen 4"];
+            overlayText.innerText = texts[index];
+            overlay.style.display = "flex";
+            setTimeout(() => {
+                overlay.style.opacity = 1;
+            }, 100);
+        });
+    });
+
+    // Close overlay
+    closeBtn.addEventListener("click", () => {
+        overlay.style.opacity = 0;
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 500);
+    });
 });
