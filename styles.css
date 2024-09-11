@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #a8d5ba; /* Calm green background */
+    background-color: #a8d5ba;
     font-family: Arial, sans-serif;
 }
 
@@ -34,9 +34,9 @@ h1 {
 
 /* Style for the square icon with rounded borders */
 .icon {
-    width: 350px; /* Increased size */
+    width: 350px;
     height: 350px;
-    background-image: url('icon.jpg'); /* Add your image URL here */
+    background-image: url('icon.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 20px; /* Rounded corners */
@@ -92,7 +92,7 @@ h1 {
 
 /* Little text under the grid */
 .extra-text {
-    grid-column: span 2; /* Makes sure the text spans the whole row */
+    grid-column: span 2;
     font-size: 1em;
     color: #333;
     text-align: center;
