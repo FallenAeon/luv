@@ -19,8 +19,8 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers items horizontally */
-    justify-content: center; /* Centers items vertically */
+    align-items: center;
+    justify-content: center;
 }
 
 /* Increase text size and adjust opacity */
@@ -41,7 +41,7 @@ h1 {
     background-position: center;
     border-radius: 20px; /* Rounded corners */
     opacity: 0; /* Initially hidden */
-    transition: opacity 2s ease 0.5s, transform 0.3s ease; /* Added transform transition */
+    transition: opacity 2s ease 0.5s, transform 0.3s ease;
 }
 
 /* Hover effect on icon */
@@ -53,7 +53,7 @@ h1 {
 .hidden-content {
     display: none;
     opacity: 0;
-    transition: opacity 1s ease; /* Smooth fade-in transition */
+    transition: opacity 1s ease;
     margin-top: 20px;
 }
 
@@ -76,11 +76,11 @@ h1 {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    transition: transform 0.3s ease, opacity 1s ease; /* Added opacity transition */
-    opacity: 0; /* Initially hidden */
+    transition: transform 0.3s ease, opacity 1s ease;
+    cursor: pointer; /* Add pointer cursor for interactivity */
+    opacity: 0;
 }
 
-/* Ensure images fade in smoothly */
 .image-grid img.visible {
     opacity: 1;
 }
@@ -90,7 +90,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Little text under the grid */
+/* Extra text under the grid */
 .extra-text {
     grid-column: span 2;
     font-size: 1em;
@@ -101,35 +101,27 @@ h1 {
 
 /* Overlay for the text box that appears when an image is clicked */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s ease; /* Fade-in effect */
-    z-index: 1000; /* Ensure it's above everything */
-}
-
-/* Rounded text box that appears when clicking an image */
-.overlay-content {
-    background-color: white;
+    width: 80vw;
+    max-width: 400px;
     padding: 20px;
     border-radius: 15px;
-    max-width: 400px;
+    display: none;
+    opacity: 0;
+    color: #fff;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
     text-align: center;
-    font-size: 1.2em;
-    color: #333;
 }
 
 /* Floating "X" button to close */
 .close-btn {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     font-size: 2em;
     color: white;
@@ -139,17 +131,4 @@ h1 {
 
 .close-btn:hover {
     transform: scale(1.1);
-}
-
-/* Adjustments for larger screens */
-@media (min-width: 600px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 900px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
