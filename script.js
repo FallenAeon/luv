@@ -24,21 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 hiddenContent.style.opacity = 1;
                 images.forEach(img => img.classList.add("visible"));
-            }, 200); // Slight delay before showing hidden content
-        }, 1000); // Make the icon fade out smoothly
+            }, 500); // Delay to make sure hidden content fades in after icon disappears
+        }, 1000); // Adjusted delay for smoother fade-out
     });
 
     // Handle click on images to show overlay with text
-    images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-            let texts = ["Texto para la imagen 1", "Texto para la imagen 2", "Texto para la imagen 3", "Texto para la imagen 4"];
-            overlayText.innerText = texts[index];
-            overlay.style.display = "flex";
-            setTimeout(() => {
-                overlay.style.opacity = 1;
-            }, 100);
-        });
-    });
-
-    // Close overlay
-    closeBtn.addEventListener("click", ()
+    images.for
