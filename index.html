@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Text and Image Icon -->
         <h1 id="click-text">Haz click en la foto! ♡</h1>
         <div class="icon" id="icon"></div>
         
@@ -17,22 +16,21 @@
         <div class="hidden-content" id="hidden-content">
             <p class="message">Feliz primer mesecito juntos!! ⸜(｡˃ ᵕ ˂ )⸝♡</p>
             <div class="image-grid">
-                <img src="pic1.jpg" alt="Image 1" class="clickable" data-text="Texto para la imagen 1">
-                <img src="pic2.jpg" alt="Image 2" class="clickable" data-text="Texto para la imagen 2">
-                <img src="pic3.jpg" alt="Image 3" class="clickable" data-text="Texto para la imagen 3">
-                <img src="pic4.jpg" alt="Image 4" class="clickable" data-text="Texto para la imagen 4">
+                <img src="pic1.jpg" alt="Image 1" id="pic1">
+                <img src="pic2.jpg" alt="Image 2" id="pic2">
+                <img src="pic3.jpg" alt="Image 3" id="pic3">
+                <img src="pic4.jpg" alt="Image 4" id="pic4">
                 <p class="extra-text">Y, por último pero no menos importante...</p>
             </div>
         </div>
     </div>
 
-    <!-- Overlay for showing text when image is clicked -->
+    <!-- Overlay for showing text when an image is clicked -->
     <div class="overlay" id="overlay">
-        <div class="overlay-content" id="overlay-content"></div>
         <span class="close-btn" id="close-btn">&times;</span>
+        <p id="overlay-text"></p>
     </div>
 
-    <!-- Add JS to handle the animation -->
     <script src="script.js"></script>
 </body>
 </html>
