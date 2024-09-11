@@ -15,45 +15,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Icon click handler
     icon.addEventListener("click", () => {
-        clickText.style.opacity = 0;
+        clickText.style.display = "none";
         icon.style.opacity = 0;
         setTimeout(() => {
-            clickText.style.display = "none";
             icon.style.display = "none";
             hiddenContent.style.display = "block";
             setTimeout(() => {
                 hiddenContent.style.opacity = 1;
                 images.forEach(img => img.classList.add("visible"));
-            }, 500); // Delay to make sure hidden content fades in after icon disappears
-        }, 1000); // Adjusted delay for smoother fade-out
+            }, 100);
+        }, 500);
     });
 
     // Handle click on images to show overlay with text
-    images.forEach(img => {
-        img.addEventListener("click", (event) => {
-            overlayText.textContent = event.target.alt; // Show the alt text of the clicked image
-            overlay.style.display = "block";
+    images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            let texts = ["Texto para la imagen 1", "Texto para la imagen 2", "Texto para la imagen 3", "Texto para la imagen 4"];
+            overlayText.innerText = texts[index];
+            overlay.style.display = "flex";
             setTimeout(() => {
                 overlay.style.opacity = 1;
-            }, 10); // Small delay to ensure display block takes effect
+            }, 100);
         });
     });
 
-    // Close the overlay when clicking the close button
+    // Close overlay
     closeBtn.addEventListener("click", () => {
         overlay.style.opacity = 0;
         setTimeout(() => {
             overlay.style.display = "none";
-        }, 500); // Match this with the CSS transition duration
-    });
-
-    // Hide the overlay when clicking outside of the overlay
-    window.addEventListener("click", (event) => {
-        if (event.target === overlay) {
-            overlay.style.opacity = 0;
-            setTimeout(() => {
-                overlay.style.display = "none";
-            }, 500); // Match this with the CSS transition duration
-        }
+        }, 500);
     });
 });
