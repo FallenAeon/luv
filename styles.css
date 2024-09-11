@@ -6,15 +6,23 @@
 }
 
 body {
+    background-color: #603c2c;
+    font-family: Arial, sans-serif;
+    background-image: url('leafeon.gif'), url('umbreon.gif');
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    background-size: 200px auto; /* Adjust the size of the images */
+    background-attachment: fixed; /* Keep the images in place while scrolling */
+    background-position: 10% center, 90% center; /* Adjust the position of the images */
+}
+
+.main-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #a8d5ba;
-    font-family: Arial, sans-serif;
 }
 
-/* Ensure the entire container is centered */
 .container {
     text-align: center;
     display: flex;
@@ -26,7 +34,7 @@ body {
 /* Increase text size and adjust opacity */
 h1 {
     font-size: 2.5em;
-    color: #333;
+    color: black; /* Changed text color to black */
     margin-bottom: 20px;
     opacity: 0; /* Initially hidden */
     transition: opacity 2s ease;
@@ -59,7 +67,7 @@ h1 {
 
 .message {
     font-size: 1.5em;
-    color: #555;
+    color: black; /* Changed text color to black */
     margin-bottom: 20px;
 }
 
@@ -93,7 +101,7 @@ h1 {
 /* Extra text below the grid */
 .extra-text {
     font-size: 1em;
-    color: #333;
+    color: black; /* Changed text color to black */
     text-align: center;
     margin-top: 10px;
 }
