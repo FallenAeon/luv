@@ -15,15 +15,21 @@
         
         <!-- Hidden content (Text and Images) -->
         <div class="hidden-content" id="hidden-content">
-            <p class="message">FELIZ PRIMER MES JUNTOSSS CANELITA ⸜(｡˃ ᵕ ˂ )⸝♡</p>
+            <p class="message">Feliz primer mesecito juntos!! ⸜(｡˃ ᵕ ˂ )⸝♡</p>
             <div class="image-grid">
-                <img src="pic1.jpg" alt="Image 1">
-                <img src="pic2.jpg" alt="Image 2">
-                <img src="pic3.jpg" alt="Image 3">
-                <img src="pic4.jpg" alt="Image 4">
-                <p class="extra-text">Y luego verás el resto :3... TE AMO MUCHO!!! (♡ˊ͈ ꒳ ˋ͈)</p>
+                <img src="pic1.jpg" alt="Image 1" class="clickable" data-text="Texto para la imagen 1">
+                <img src="pic2.jpg" alt="Image 2" class="clickable" data-text="Texto para la imagen 2">
+                <img src="pic3.jpg" alt="Image 3" class="clickable" data-text="Texto para la imagen 3">
+                <img src="pic4.jpg" alt="Image 4" class="clickable" data-text="Texto para la imagen 4">
+                <p class="extra-text">Y, por último pero no menos importante...</p>
             </div>
         </div>
+    </div>
+
+    <!-- Overlay for showing text when image is clicked -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-content" id="overlay-content"></div>
+        <span class="close-btn" id="close-btn">&times;</span>
     </div>
 
     <!-- Add JS to handle the animation -->
