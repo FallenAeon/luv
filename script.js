@@ -15,16 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Icon click handler
     icon.addEventListener("click", () => {
-        clickText.style.display = "none";
+        clickText.style.opacity = 0;
         icon.style.opacity = 0;
         setTimeout(() => {
+            clickText.style.display = "none";
             icon.style.display = "none";
             hiddenContent.style.display = "block";
             setTimeout(() => {
                 hiddenContent.style.opacity = 1;
                 images.forEach(img => img.classList.add("visible"));
-            }, 100);
-        }, 500);
+            }, 200); // Slight delay before showing hidden content
+        }, 1000); // Make the icon fade out smoothly
     });
 
     // Handle click on images to show overlay with text
@@ -40,10 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Close overlay
-    closeBtn.addEventListener("click", () => {
-        overlay.style.opacity = 0;
-        setTimeout(() => {
-            overlay.style.display = "none";
-        }, 500);
-    });
-});
+    closeBtn.addEventListener("click", ()
