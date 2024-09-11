@@ -25,17 +25,17 @@ body {
 
 /* Increase text size and adjust opacity */
 h1 {
-    font-size: 3em; /* Increased font size */
+    font-size: 3.5em; /* Further increased font size */
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Increased margin for spacing */
     opacity: 0; /* Initially hidden */
     transition: opacity 2s ease;
 }
 
 /* Style for the square icon with rounded borders */
 .icon {
-    width: 400px; /* Increased size */
-    height: 400px;
+    width: 420px; /* Further increased size */
+    height: 420px;
     background-image: url('icon.jpg');
     background-size: cover;
     background-position: center;
@@ -58,18 +58,18 @@ h1 {
 }
 
 .message {
-    font-size: 2em; /* Increased font size */
+    font-size: 2.2em; /* Slightly larger font */
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Increased margin for better spacing */
 }
 
 /* Grid layout for images */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Ensure 2x2 grid */
-    grid-gap: 20px;
-    max-width: 600px; /* Increased max width to make images bigger */
-    margin: 0 auto 20px auto;
+    grid-gap: 25px; /* Increased gap for spacing */
+    max-width: 650px; /* Increased max width to make images bigger */
+    margin: 0 auto 25px auto;
 }
 
 .image-grid img {
@@ -92,10 +92,10 @@ h1 {
 
 /* Extra text below the grid */
 .extra-text {
-    font-size: 1.2em;
+    font-size: 1.5em; /* Increased font size for better readability */
     color: #333;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px; /* Added margin to give more space */
 }
 
 /* Overlay for the text box that appears when an image is clicked */
