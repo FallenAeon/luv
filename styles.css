@@ -99,6 +99,48 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* Overlay for the text box that appears when an image is clicked */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Fade-in effect */
+    z-index: 1000; /* Ensure it's above everything */
+}
+
+/* Rounded text box that appears when clicking an image */
+.overlay-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Floating "X" button to close */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
 /* Adjustments for larger screens */
 @media (min-width: 600px) {
     .image-grid {
